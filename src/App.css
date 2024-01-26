@@ -1,38 +1,231 @@
-.App {
-  text-align: center;
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+#header {
+  width: 100%;
+  height: 60px;
+  background-color: #fff;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+#main-container {
+  padding-top: 80px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+#main-container .container {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+
+.side-bar {
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  align-items: center;
+  position: relative;
+}
+
+.side-bar .add {
+  cursor: pointer;
+}
+
+.side-bar .colors {
+  height: 0;
+  overflow: hidden;
+  transition: ease-in 0.5s;
+  border-radius: 50px;
+  background-color: #fff;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.side-bar .colors.active {
+  height: auto;
+}
+
+.side-bar .colors ul {
+  padding: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  gap: 20px;
 }
 
-.App-link {
-  color: #61dafb;
+.side-bar .colors ul .list-item {
+  border-radius: 50px;
+  width: 20px;
+  height: 20px;
+  list-style: none;
+  cursor: pointer;
+  transition: ease;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.side-bar .colors ul .list-item:hover {
+  transform: scale(1.2);
+}
+
+.note-container {
+  width: 100%;
+  height: calc(100vh - 100px);
+  overflow-y: scroll;
+}
+
+.note-container::-webkit-scrollbar {
+  display: none;
+}
+
+.notes {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  align-self: flex-start;
+  gap: 20px;
+}
+
+.note {
+  height: 220px;
+  border-radius: 20px;
+  padding: 20px;
+  padding-bottom: 0;
+  display: flex;
+  flex-direction: column;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+  position: relative;
+}
+
+.note p {
+  margin-top: 10px;
+  font-weight: 600;
+}
+
+.note textarea {
+  flex: 1;
+  font-size: 16px;
+  line-height: 1.5;
+  text-align: justify;
+  resize: none;
+  border: none;
+  outline: none;
+  background-color: transparent;
+}
+
+.note textarea::-webkit-scrollbar {
+  display: none;
+  width: 5px;
+}
+
+.note textarea::-webkit-scrollbar-track {
+  background-color: #ececec;
+  border-radius: 10px;
+}
+
+.note textarea::-webkit-scrollbar-thumb {
+  background-color: #c9c9c9;
+  border-radius: 2px;
+  transition: 0.5s;
+}
+
+.note textarea::-webkit-scrollbar-thumb:hover {
+  background-color: #ababab;
+}
+
+.note textarea:hover::-webkit-scrollbar {
+  display: block;
+}
+
+.note .icon {
+  position: absolute;
+  right: 0;
+  bottom: 15px;
+  opacity: 0;
+  background-color: #fff;
+  color: red;
+  transition: 0.5s;
+  z-index: 10;
+}
+
+.note:hover .icon {
+  opacity: 1;
+  right: 15px;
+  background-color: #fff;
+}
+
+.no-notes {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  background-color: #e0e0e0;
+  box-shadow: inset 29px 29px 58px #d7d7d7,
+              inset -29px -29px 58px #e9e9e9;
+}
+
+.no-notes .btn {
+  background-color: #ababab;
+  border-radius: 10px;
+  color: #fff;
+  cursor: default;
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 4px 6px;
+}
+
+.no-notes .btn:hover {
+  background-color: #ababab;
+}
+
+.no-notes h2 {
+  color: #9a9a9a;
+  text-shadow: rgba(0, 0, 0, 0.19) 0px 5px 20px, rgba(0, 0, 0, 0.23) 0px 4px 6px;
+}
+
+@media screen and (min-width: 768px) and (max-width: 992px) {
+  .container {
+      padding: 0 1%;
+  }    
+}
+
+@media screen and (min-width: 320px) and (max-width: 768px) {
+  .container {
+      padding: 0 2%;
   }
-  to {
-    transform: rotate(360deg);
+
+  .note-container {
+      height: calc(100vh - 100px);
+  }
+
+  .side-bar {
+      position: fixed;
+      bottom: 30px;
+      right: 20px;
+      z-index: 999;
+  }
+  
+  .side-bar .add {
+      order: 2;
+  }
+  
+  .side-bar .colors {
+      order: 1;
+  }
+
+  .side-bar .colors ul {
+      padding: 15px;
+  }
+
+  .notes {
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 12px;
   }
 }
