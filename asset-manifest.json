@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/Easy-Note/static/css/main.0b1c8397.css",
-    "main.js": "/Easy-Note/static/js/main.ce99d565.js",
-    "static/js/787.8cd242b2.chunk.js": "/Easy-Note/static/js/787.8cd242b2.chunk.js",
-    "index.html": "/Easy-Note/index.html",
-    "main.0b1c8397.css.map": "/Easy-Note/static/css/main.0b1c8397.css.map",
-    "main.ce99d565.js.map": "/Easy-Note/static/js/main.ce99d565.js.map",
-    "787.8cd242b2.chunk.js.map": "/Easy-Note/static/js/787.8cd242b2.chunk.js.map"
+    "main.css": "/Easy-Notes/static/css/main.0b1c8397.css",
+    "main.js": "/Easy-Notes/static/js/main.8d0f8765.js",
+    "static/js/787.8cd242b2.chunk.js": "/Easy-Notes/static/js/787.8cd242b2.chunk.js",
+    "index.html": "/Easy-Notes/index.html",
+    "main.0b1c8397.css.map": "/Easy-Notes/static/css/main.0b1c8397.css.map",
+    "main.8d0f8765.js.map": "/Easy-Notes/static/js/main.8d0f8765.js.map",
+    "787.8cd242b2.chunk.js.map": "/Easy-Notes/static/js/787.8cd242b2.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.0b1c8397.css",
-    "static/js/main.ce99d565.js"
+    "static/js/main.8d0f8765.js"
   ]
 }
